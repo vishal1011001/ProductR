@@ -5,7 +5,7 @@ import router from './routes/router.js';
 
 const DATABASE_URL = process.env.DATABASE_URL || `mongodb://127.0.0.1:27017/jobs`;
 
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
 const app = express();
 

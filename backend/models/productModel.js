@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const productSchema = mongoose.Schema({
-  userId: { type: String, required: true },
   productName: { type: String, required: true, trim: true },
   productType: { type: String, required: true, default: "Food" }, 
   quantityStock: { type: Number, required: true, default: 0 },
@@ -17,9 +16,9 @@ const productSchema = mongoose.Schema({
 
 const productModel = mongoose.model("Product", productSchema);
 
-const createProduct = async (productData, userId) => {
+const createProduct = async (productData) => {
   try {
-    const newProduct = { ...productData, userId };
+    const newProduct = {...productData};
     const result = await productModel.create(newProduct);
     return result;
   } catch (error) {
@@ -27,9 +26,9 @@ const createProduct = async (productData, userId) => {
   }
 };
 
-const getAllProducts = async (userId) => {
+const getAllProducts = async () => {
   try {
-    return await productModel.find({ userId }).sort({ createdAt: -1 });
+    return await productModel.find().sort({ createdAt: -1 });
   } catch (error) {
     throw error;
   }
