@@ -11,6 +11,9 @@ function App() {
 
   const [products, setProducts] = useState([]);
 
+  const [published, setPublished] = useState([]);
+  const [UnPublished, setUnPublished] = useState([]);
+
   const fetchProducts = async () => {
     try {
       const response = await fetch(`${API_URL}/products`, {
@@ -24,6 +27,8 @@ function App() {
         const data = await response.json();
         console.log(data);
         setProducts(data);
+        setPublished(data.filter(data => data.isPublished === true));
+        setUnPublished(data.filter(data => data.isPublished === false));
       } else {
         throw new Error('Products cannot be fetched.');
       }
@@ -37,12 +42,17 @@ function App() {
     fetchProducts();
   }, []);
 
+
+  const changePage = (page) => {
+    setPage(page);
+  }
+
   return (
     <div className='w-screen h-screen'>
-      <Sidebar />
+      <Sidebar changePage={changePage}/>
       <Headerbar products={products}/>
       {(page === 'home') &&
-        <Home />
+        <Home published={published} UnPublished={UnPublished}/>
       }
       {page === 'products' &&
         <>

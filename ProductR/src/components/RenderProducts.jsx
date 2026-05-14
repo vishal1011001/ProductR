@@ -1,9 +1,9 @@
 export function RenderProducts({ products }) {
   return (
-    <div>
-      {products.map((product) => {
+    <div className="grid grid-cols-3 gap-4">
+      {products.map((product) => (
         <div key={product._id}>
-          <div className="w-[280px] rounded-2xl border border-gray-200 bg-white p-3 shadow-sm">
+          <div className="w-[280px]  rounded-2xl border border-gray-200 bg-white p-3 shadow-sm">
 
             {/* Product Image */}
             <div className="flex justify-center rounded-xl bg-gray-100 p-4">
@@ -61,12 +61,12 @@ export function RenderProducts({ products }) {
 
               <div className="flex justify-between">
                 <span className="text-gray-400">Exchange Eligibility -</span>
-                <span className="font-medium text-green-600">
+                <span className="">
                   {product.exchangeEligibility}
                 </span>
               </div>
 
-              <div className="flex justify-between">
+              {/* <div className="flex justify-between">
                 <span className="text-gray-400">Status -</span>
                 <span
                   className={`font-medium ${product.isPublished
@@ -76,7 +76,7 @@ export function RenderProducts({ products }) {
                 >
                   {product.isPublished ? "Published" : "Draft"}
                 </span>
-              </div>
+              </div> */}
             </div>
 
             {/* Buttons */}
@@ -95,7 +95,7 @@ export function RenderProducts({ products }) {
             </div>
           </div>
         </div>
-      })}
+      ))}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-function Sidebar() {
+function Sidebar({changePage}) {
   return (
     <div className="bg-slate-900 w-55 text-white h-screen p-2">
       <div className='*:mb-2 border-b border-gray-600'>
@@ -7,8 +7,8 @@ function Sidebar() {
       </div>
 
       <div className="flex flex-col *:w-40 *:rounded *:p-1.5 *:text-left *:mt-2 *:hover:bg-slate-700">
-        <button>Home</button>
-        <button>Products</button>
+        <button onClick={() => changePage('home')}>Home</button>
+        <button onClick={() => changePage('products')}>Products</button>
       </div>
     </div>
   );
