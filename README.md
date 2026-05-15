@@ -10,8 +10,8 @@ Built as part of the Full Stack Developer assignment for Orufy Technologies Pvt.
 - Database: MongoDB (Mongoose)
 - State Management: React Hooks (useState, useRef)
 
-📁 Project StructurePlaintextProductR/
-├── ProductR/           # React frontend (Vite)
+📁 Project StructurePlaintextProductR/ <br>
+├── ProductR/           # React frontend (Vite) <br>
 └── backend/           # Node.js + Express backend
 
 ⚙️ Setup & Installation
@@ -28,4 +28,5 @@ Built as part of the Full Stack Developer assignment for Orufy Technologies Pvt.
         MONGODB_URI=your_mongodb_connection_string     
 5. Start the server: npm run dev
 
-Author: VishalSubmission Date: May 16, 2026 
+Author: Vishal <br>
+Submission Date: May 15, 2026 
