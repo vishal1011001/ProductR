@@ -5,7 +5,6 @@ export function RenderProducts({ products }) {
         <div key={product._id}>
           <div className="w-[280px]  rounded-2xl border border-gray-200 bg-white p-3 shadow-sm">
 
-            {/* Product Image */}
             <div className="flex justify-center rounded-xl bg-gray-100 p-4">
               <img
                 src={product.productImageUrl}
@@ -14,18 +13,15 @@ export function RenderProducts({ products }) {
               />
             </div>
 
-            {/* Pagination Dots */}
             <div className="mt-2 flex justify-center gap-1">
               <div className="h-2 w-2 rounded-full bg-orange-400"></div>
               <div className="h-2 w-2 rounded-full bg-gray-300"></div>
             </div>
 
-            {/* Product Title */}
             <h2 className="mt-3 text-[15px] font-semibold text-gray-900">
               {product.productName}
             </h2>
 
-            {/* Product Details */}
             <div className="mt-3 space-y-1 text-sm">
               <div className="flex justify-between">
                 <span className="text-gray-400">Product type -</span>
@@ -66,17 +62,6 @@ export function RenderProducts({ products }) {
                 </span>
               </div>
 
-              {/* <div className="flex justify-between">
-                <span className="text-gray-400">Status -</span>
-                <span
-                  className={`font-medium ${product.isPublished
-                      ? "text-green-600"
-                      : "text-red-500"
-                    }`}
-                >
-                  {product.isPublished ? "Published" : "Draft"}
-                </span>
-              </div> */}
             </div>
 
             {/* Buttons */}
